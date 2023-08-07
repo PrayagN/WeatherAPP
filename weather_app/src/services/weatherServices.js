@@ -1,5 +1,5 @@
 import { DateTime } from "luxon";
-const API_KEY ="65d6ce5fcb7714276ecf5ed1f930f409";
+const API_KEY ="8b65251d0538e1f7bef7cf8d1fc4732c";
 const Base_URL = "https://api.openweathermap.org/data/2.5";
 const getWeatherData = (infoType, searchParams) => {
   const url = new URL(Base_URL + "/" + infoType);
@@ -70,6 +70,7 @@ const formatForecastWeather = (data) => {
 };
 
 const getFormattedWeatherData = async (searchParams) => {
+  console.log(searchParams,'searchparams');
   const formattedCurrentWeather = await getWeatherData(
     "weather",
     searchParams
@@ -80,8 +81,8 @@ const getFormattedWeatherData = async (searchParams) => {
   const formattedForecastWeather = await getWeatherData("onecall", {
     lat,
     lon,
-    exclude: "current, minutely, alerts",
-    units: searchParams.units,
+    exclude: "minutely",
+    units:'metric',
   }).then(formatForecastWeather);
 
   return { ...formattedCurrentWeather, ...formattedForecastWeather };
@@ -94,9 +95,11 @@ const formatToLocalTime = (
 ) => DateTime.fromSeconds(secs).setZone(zone).toFormat(format);
 
 const iconUrlFromCode = (code) =>
-  `https://openweathermap.org/img/wn/${code}@2x.png`;
+  `/src/assets/${code}.png`;
+  // `https://openweathermap.org/img/wn/${code}@2x.png`;
 
 // export default getWeatherData;
+// console.log(code);
 export default getFormattedWeatherData;
 
 export { formatToLocalTime, iconUrlFromCode };

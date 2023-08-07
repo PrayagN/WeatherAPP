@@ -35,28 +35,30 @@ function Input({ setQuery, units, setUnits }) {
   };
 
   return (
-    <div className="flex flex-row justify-center my-6">
-      <div className="flex flex-row w-3/4 items-center justify-center space-x-4 rounded-lg">
+    <div className="flex flex-col sm:flex-row justify-center my-6">
+      <div className="flex flex-col sm:flex-row w-full sm:w-3/4 items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 rounded-lg">
         <input
           type="text"
-          className="text-xs font-light p-2 w-full shadow-lg focus:outline-none capitalize placeholder-lowercase rounded-xl"
+          className="text-xs font-light p-2 w-full sm:w-auto shadow-lg focus:outline-none capitalize placeholder-lowercase rounded-xl"
           placeholder="Enter city name..."
           value={city}
           onChange={(e) => setCity(e.target.value)}
         />
-        <UilSearch
-          size={25}
-          className="text-white cursor-pointer transition ease-out hover:scale-125"
-          onClick={handleSearchClick}
-        />
-        <UilLocationPoint
-          size={25}
-          className="text-white cursor-pointer transition ease-out hover:scale-125"
-          onClick={handleLocationClick}
-        />
+        <div className="flex flex-row space-x-4 sm:space-x-0">
+          <UilSearch
+            size={25}
+            className="text-white cursor-pointer transition ease-out hover:scale-125"
+            onClick={handleSearchClick}
+          />
+          <UilLocationPoint
+            size={25}
+            className="text-white cursor-pointer transition ease-out hover:scale-125"
+            onClick={handleLocationClick}
+          />
+        </div>
       </div>
 
-      <div className="flex flex-row w-1/4 items-center justify-center">
+      <div className="flex flex-col sm:flex-row w-full sm:w-1/4 mt-4 sm:mt-0 items-center justify-center">
         <button
           onClick={handleUnitsChange}
           name="metric"
@@ -66,7 +68,7 @@ function Input({ setQuery, units, setUnits }) {
         >
           &deg;C
         </button>
-        <p className="text-white">|</p>
+        <p className="text-white hidden sm:block">|</p>
         <button
           onClick={handleUnitsChange}
           name="imperial"
