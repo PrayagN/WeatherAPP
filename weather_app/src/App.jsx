@@ -41,15 +41,15 @@ function App() {
     // Check the specific weather conditions and return the appropriate image URLs
     // if (temp <= value) {
     if (details === "Clear") {
-      return "https://wallpapers.com/images/hd/perfect-weather-with-gradient-sky-ym0nn79vhoqg34v3.jpg";
+      return "../src/assets/clear.avif";
     } else if (details === "Rain") {
-      return "https://i.pinimg.com/originals/41/b6/82/41b68262aeeaf353ae83fa8b4954e478.gif";
+      return "../src/assets/rain.avif";
     } else if (details === "Clouds") {
-      return "https://wallpaperaccess.com/full/535628.jpg";
+      return "../src/assets/clouds.avif";
     } else if (details === "Haze") {
-      return "https://cdn.wallpapersafari.com/36/5/mfsEjg.gif";
+      return "../src/assets/haze.avif";
     } else if (details === "Mist") {
-      return "https://e0.pxfuel.com/wallpapers/365/902/desktop-wallpaper-dark-mist-trees-forest-tablet-laptop-background-16864-dark-forest-laptop.jpg";
+      return "../src/assets/mist.jpg";
     } else {
       return "https://i.pinimg.com/originals/47/76/e1/4776e163cc466942ab43871f39630eba.gif";
     }
