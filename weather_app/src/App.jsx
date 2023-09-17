@@ -53,9 +53,7 @@ function App() {
     } else {
       return "https://i.pinimg.com/originals/47/76/e1/4776e163cc466942ab43871f39630eba.gif";
     }
-    // } else {
-    //   return 'https://i.pinimg.com/originals/47/76/e1/4776e163cc466942ab43871f39630eba.gif';
-    // }
+   
   };
 
   return (
