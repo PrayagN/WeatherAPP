@@ -8,5 +8,8 @@ export default defineConfig({
   preview :{
     host :true,
     port:1000
-  }
+  },
+  build: {
+    outDir: 'dist', // Change this to 'dist'
+  },
 })
